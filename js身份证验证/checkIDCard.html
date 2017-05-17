@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>CordBirthday</title>
+		<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+        <script type="text/javascript"  src="IDVerifier.js"></script>
+        <script type="text/javascript">
+            function validite(){
+                var id = $("#idCard").val();
+				var resultstr = checkIdCard(id);
+
+
+                if (resultstr == "true") {
+                    showIDInfo(id,"area" ,"sex", "birthday");
+                } else {
+					$('#sex').val("");
+                    $('#birthday').val("");
+                    $('#area').val("");
+					alert(resultstr);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <table align="center">
+                <tr>
+                    <td align="center">
+                        身份证<input type="text" id="idCard">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        地区<input type="text" id="area">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        性别<input type="text" id="sex">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        生日<input type="text" id="birthday">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <input type="button" value="OK" onclick="validite()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
